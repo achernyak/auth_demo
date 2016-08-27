@@ -19,7 +19,7 @@ defmodule AuthDemo.Mixfile do
   def application do
     [mod: {AuthDemo, []},
      applications: [:phoenix, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :mariaex]]
+                    :phoenix_ecto, :mariaex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,7 +34,8 @@ defmodule AuthDemo.Mixfile do
      {:mariaex, ">= 0.0.0"},
      {:phoenix_ecto, "~> 2.0"},
      {:gettext, "~> 0.9"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 2.0"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
