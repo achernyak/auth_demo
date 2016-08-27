@@ -21,8 +21,8 @@ This will be a system for authenticating users
    api -> u: 200 HTTP with AuthToken
  #+END_SRC
 
- #+RESULTS:
  [[file:auth.png]]
+
 ** Sample code
 #+BEGIN_SRC ruby
   def adder(a, b)
