@@ -1,7 +1,7 @@
 * Auth Demo
 This will be a system for authenticating users
 ** Sequence diagram
- #+BEGIN_SRC plantuml :file auth.png
+ #+BEGIN_SRC plantuml :file auth.png :noexport
    actor "User" as u
    boundary "API Gateway" as api
    control "AuthCtrl" as auth
@@ -20,9 +20,7 @@ This will be a system for authenticating users
    auth --> api: User
    api -> u: 200 HTTP with AuthToken
  #+END_SRC
-
  [[file:auth.png]]
-
 ** Sample code
 #+BEGIN_SRC ruby
   def adder(a, b)
