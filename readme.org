@@ -1,0 +1,37 @@
+* Auth Demo
+This will be a system for authenticating users
+** Sequence diagram
+ #+BEGIN_SRC plantuml :file auth.png
+   actor "User" as u
+   boundary "API Gateway" as api
+   control "AuthCtrl" as auth
+   database "Database" as db
+
+
+   u -> api: POST /auth {}
+   api -> u: 400 HTTP Bad Request
+   u -> api: POST /auth {username: "joe@example.org", password: "abc1233"}
+   api --> auth: Params
+   auth --> db: FetchResource
+   db --> auth: nil
+   auth --> api: nil
+   api -> u: 401 HTTP Unauthorized
+   db --> auth: User
+   auth --> api: User
+   api -> u: 200 HTTP with AuthToken
+ #+END_SRC
+
+ #+RESULTS:
+ [[file:auth.png]]
+** Sample code
+#+BEGIN_SRC ruby
+  def adder(a, b)
+    a + b
+  end
+
+  adder(2, 3)
+#+END_SRC
+
+#+RESULTS:
+: 5
+
