@@ -8,11 +8,11 @@ defmodule AuthDemo.SessionController do
       {:ok, session} ->
 	conn
 	|> put_status(:created)
-	|> json(%{token: session.token})
+	|> render("show.json", session: session)
       {:errors, reason, conn} ->
 	conn
 	|> put_status(:unauthorized)
-	|> json(%{errors: reason})
+	|> render("error.json", errors: reason)
     end
   end
 

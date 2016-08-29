@@ -13,7 +13,7 @@ defmodule AuthDemo.SessionControllerTest do
 
   test "creates and renders resource when data is valid", %{conn: conn} do
     conn = post conn, session_path(conn, :create), @valid_attrs
-    token = json_response(conn, 201)["token"]
+    token = json_response(conn, 201)["data"]["token"]
     assert token
     assert Repo.get_by(Session, token: token)
   end
