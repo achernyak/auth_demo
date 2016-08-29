@@ -15,6 +15,6 @@ defmodule AuthDemo.Router do
   scope "/auth", AuthDemo do
     pipe_through :api
     resources "/", SessionController, only: [:create, :delete]
-    resources "/user", UserController, only: [:create]
+    resources "/users", UserController, only: [:create]
   end
 end
