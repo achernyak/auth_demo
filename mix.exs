@@ -35,7 +35,8 @@ defmodule AuthDemo.Mixfile do
      {:phoenix_ecto, "~> 2.0"},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:comeonin, "~> 2.0"}]
+     {:comeonin, "~> 2.0"},
+     {:secure_random, "~> 0.5"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.
